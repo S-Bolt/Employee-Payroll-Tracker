@@ -3,17 +3,54 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 // Collect employee data
 const collectEmployees = function() {
-  // TODO: Get user input to create and return an array of employee objects
-}
+  const employees = [];
+
+  let addMoreEmployees = true;
+  while (addMoreEmployees) {
+    const firstName = prompt("Enter employee first name.");
+    const lastName = prompt("Enter employee last name.");
+    let salary = parseFloat(prompt("Enter employee salary."));//added parseFloat b/c my salary values were be treaded as atrings instead of numbers
+  
+  if (isNaN(salary) || !salary){
+    salary =0;
+  }
+
+  const employee = {
+    firstName: firstName,
+    lastName: lastName,
+    salary: salary,
+  };
+  employees.push(employee);
+
+  const userInput = prompt("Do you want to add an additional employee? (yes/no)").toLowerCase();
+  addMoreEmployees = userInput ==="yes";
+};
+  return employees;
+};
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
-  // TODO: Calculate and display the average salary
-}
+if (employeesArray.length > 0){
+  const totalSalary = employeesArray.reduce((sum, employee) => sum + employee.salary, 0);
+  const  averageSalary = totalSalary / employeesArray.length;
 
+  console.log(`Average Salary: ${averageSalary}`);
+  console.log(`Number of Employees: ${employeesArray.length}`);
+  console.log(`Total Salary: ${totalSalary}`);
+}
+}
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
-  // TODO: Select and display a random employee
+  if (employeesArray.length > 0){
+    const randomIndex = Math.floor(Math.random() * employeesArray.length);
+    const randomEmployee = employeesArray[randomIndex];
+    console.log(`Random Employee:`);
+    console.log(`First Name: ${randomEmployee.firstName}`);
+    console.log(`Last Name: ${randomEmployee.lastName}`);
+    console.log(`Salary: ${randomEmployee.salary}`);
+  } else{
+    console.log(`No employees to select a random`);
+  }
 }
 
 /*
