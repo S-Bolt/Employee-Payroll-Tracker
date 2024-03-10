@@ -14,4 +14,4 @@ A tool allowing users to to input employee names and salary, then see average sa
 
 Head to this website: https://s-bolt.github.io/Employee-Payroll-Tracker/
 
-(Employee-Payroll-Tracker\assets\images\Screenshot 2024-03-09 214749.png)
+![Website Screenshot](Employee-Payroll-Tracker\assets\images\Screenshot 2024-03-09 214749.png)
